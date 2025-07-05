@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/dobruvane.css">
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: column; min-height: 100vh;">
+    {% include navbar.html %}
+
+    <div style="flex-grow: 1;">{{content}}</div>
+
+    {% include footer.html %}    
+
+</div>
+    <script src="{{ site.baseurl }}/assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>

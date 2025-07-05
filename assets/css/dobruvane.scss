@@ -1,0 +1,94 @@
+---
+---
+
+@font-face { 
+    font-family: "YesevaOne";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+        url('{{ site.baseurl }}/assets/fonts/YesevaOne-Regular.ttf') format("truetype")
+}
+
+.intro-pic {
+    font-family: "YesevaOne", Sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 37px;
+    color: #FFFAEA;
+    padding: 0% 15% 0% 15%;
+}
+
+html, body {
+    height: 100%;
+    font-family:  "YesevaOne";
+}
+
+.navbar-nav {
+    gap: 1rem;
+}
+    
+
+.nav-container {
+    min-height: 80px;
+    background-color: rgb(255, 252, 244);
+    position: sticky;
+    top: 0;
+}
+
+.navbar-brand .logo {
+    width: 50px;
+}
+
+.navbar-brand .logo-title {
+    margin-left: 10px;
+}
+
+/* hamburger */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler{
+    padding: 0px;
+    border: 0px;
+}
+
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0px;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#000;
+    stroke-width:5.5;
+    stroke-linecap:round;
+  }
+
+  .ham4 .top {
+    stroke-dasharray: 40 121;
+  }
+  .ham4 .bottom {
+    stroke-dasharray: 40 121;
+  }
+  .ham4.active .top {
+    stroke-dashoffset: -68px;
+  }
+  .ham4.active .bottom {
+    stroke-dashoffset: -68px;
+  }
