@@ -1,9 +1,21 @@
+{% assign cur_url_without_prefix_and_extension = page.url %}
+{% assign url_length = page.url | size | minus: 4 %}
+{% assign url_prefix = page.url | slice: 0,4 %}
+{% if url_prefix == "/en/" %}
+  {% assign cur_url_without_prefix_and_extension = cur_url_without_prefix_and_extension | slice: 4, url_length %}
+{% endif %}
+{% assign url_parts = cur_url_without_prefix_and_extension | split:'.' %}
+{% assign num_url_parts = url_parts | size %}
+{% if num_url_parts >= 2 and url_parts[1] == "html" %}
+  {% assign cur_url_without_prefix_and_extension = url_parts[0] %}
+{% endif %}
+
 <div class="container-fluid  nav-container">
     <div class="container">
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/en/">
         <div class="d-flex flex-row align-items-center">
             <img class="logo" src="{{ site.baseurl }}/assets/images/dobruvane-logo.png">
             <div class="logo-title">Добруване с Ясмина Тал</div>
@@ -19,38 +31,39 @@
           <!-- First row -->
           <ul class="navbar-nav flex-column flex-lg-row mb-1">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Начало</a>
+              <a class="nav-link active" aria-current="page" href="/en/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">За мен</a>
+              <a class="nav-link" href="/en/about">About me</a>
             </li>
             <li class="nav-item dropdown dropdown-menu-end">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Инструменти за Добруване
+                Instruments for being well
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/consulting">Психологическо консултиране</a></li>
-                <li><a class="dropdown-item" href="/psychotherapy">Психотерапия</a></li>
-                <li><a class="dropdown-item" href="/psychodrama">Психодрама работилници</a></li>
-                <li><a class="dropdown-item" href="/trainings">Обучения за екипност и работа в екип</a></li>
-                <li><a class="dropdown-item" href="/communication">Обучения и консултиране в крос-културни различия и междукултурна комуникация</a></li>
-                <li><a class="dropdown-item" href="/organisations">Консултиране на екипи и организации</a></li>
+                <li><a class="dropdown-item" href="/en/consulting">Psychological Consulting</a></li>
+                <li><a class="dropdown-item" href="/en/psychotherapy">Psychotherapy</a></li>
+                <li><a class="dropdown-item" href="/en/psychodrama">Psychodrama workshops</a></li>
+                <li><a class="dropdown-item" href="/en/trainings">Working in a team trainings</a></li>
+                <li><a class="dropdown-item" href="/en/communication">Cross-cultural differences and intercultural communication trainings and consulting</a></li>
+                <li><a class="dropdown-item" href="/en/organisations">Teams and organisations consulting</a></li>
               </ul>
             </li>
           </ul>
-      
+
           <!-- Second row -->
           <ul class="navbar-nav flex-column flex-lg-row">
             <li class="nav-item">
-              <a class="nav-link" href="/wisdom">Съкровищница на мъдростта</a>
+              <a class="nav-link" href="/en/wisdom">Wisdom treasury</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Свържете се е мен</a>
+              <a class="nav-link" href="/en/contact">Contact me</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/en{{ page.url }}">EN</a>
+              <a class="nav-link" href="/{{ cur_url_without_prefix_and_extension }}">БГ</a>
             </li>
+
           </ul>
       
         </div>

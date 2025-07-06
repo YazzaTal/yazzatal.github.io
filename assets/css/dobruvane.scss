@@ -9,6 +9,14 @@
         url('{{ site.baseurl }}/assets/fonts/YesevaOne-Regular.ttf') format("truetype")
 }
 
+@font-face { 
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+        url('{{ site.baseurl }}/assets/fonts/Montserrat/static/Montserrat-Medium.ttf') format("truetype")
+}
+
 .intro-pic {
     font-family: "YesevaOne", Sans-serif;
     font-size: 32px;
@@ -20,11 +28,21 @@
 
 html, body {
     height: 100%;
-    font-family:  "YesevaOne";
+    font-family:  "Montserrat", Sans-serif;
+    color: #39393F; /* Graphite dark grey */
 }
 
 .navbar-nav {
     gap: 1rem;
+}
+
+/* Force dropdown to align right under the parent */
+.navbar .dropdown-menu {
+  right: 0;
+  left: auto;
+  max-width: 90vw; /* prevent dropdown from overflowing viewport */
+  white-space: normal; /* allow wrapping of long text */
+  word-break: break-word; /* break long words if needed */
 }
     
 
@@ -54,6 +72,10 @@ html, body {
 .navbar-toggler{
     padding: 0px;
     border: 0px;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #556B2F;
 }
 
 .ham {

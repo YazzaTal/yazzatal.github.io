@@ -1,15 +1,44 @@
+{% assign cur_url = page.url %}
+{% assign url_length = page.url | size | minus: 4 %}
+{% assign url_prefix = page.url | slice: 0,4 %}
+{% if url_prefix == "/en/" %}
+  {% assign cur_url = cur_url | slice: 4, url_length %}
+{% endif %}
+{% assign url_parts = cur_url | split:'.' %}
+{% assign num_url_parts = url_parts | size %}
+{% if num_url_parts >= 2 and url_parts[1] == "html" %}
+  {% assign cur_url = url_parts[0] %}
+{% endif %}
+{% assign is_english = false %}
+{% if url_prefix == "/en/" %}
+  {% assign is_english = true %}
+{% endif %}
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - Добруване</title>
     <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/dobruvane.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
   </head>
   <body>
     <div style="display: flex; flex-direction: column; min-height: 100vh;">
-    {% include navbar.html %}
+
+    {% if is_english %}
+      {% include navbar-en.html %}
+    {% else %}
+      {% include navbar.html %}
+    {% endif %}
+    
+    <!--<div>URL: {{ cur_url }}, English: {{ is_english }}</div>-->
 
     <div style="flex-grow: 1;">{{content}}</div>
 
