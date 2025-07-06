@@ -1,6 +1,9 @@
 ---
 ---
 
+$color_graphite_dark_grey: #39393F; /* Graphite dark grey */;
+$color_dar_olive_green: #556B2F; /* Dark Olive Green */
+
 @font-face { 
     font-family: "YesevaOne";
     font-style: normal;
@@ -22,14 +25,14 @@
     font-size: 32px;
     font-weight: 400;
     line-height: 37px;
-    color: #FFFAEA;
+    color: #FFFAEA; 
     padding: 0% 15% 0% 15%;
 }
 
 html, body {
     height: 100%;
     font-family:  "Montserrat", Sans-serif;
-    color: #39393F; /* Graphite dark grey */
+    color: $color_graphite_dark_grey; /* Graphite dark grey */
 }
 
 .navbar-nav {
@@ -44,13 +47,21 @@ html, body {
   white-space: normal; /* allow wrapping of long text */
   word-break: break-word; /* break long words if needed */
 }
-    
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: $color_dar_olive_green !important;
+}
 
 .nav-container {
     min-height: 80px;
     background-color: rgb(255, 252, 244);
     position: sticky;
     top: 0;
+}
+
+.navbar-brand:focus, .nav-item:focus, .nav-link:focus{
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .navbar-brand .logo {
@@ -75,7 +86,7 @@ html, body {
 }
 
 .nav-link.active {
-  border-bottom: 3px solid #556B2F;
+  border-bottom: 3px solid $color_dar_olive_green;
 }
 
 .ham {
@@ -94,10 +105,11 @@ html, body {
   .hamRotate180.active {
     transform: rotate(180deg);
   }
+
   .line {
     fill:none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke:#000;
+    stroke: $color_graphite_dark_grey;
     stroke-width:5.5;
     stroke-linecap:round;
   }

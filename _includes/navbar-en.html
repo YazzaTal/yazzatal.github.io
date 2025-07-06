@@ -1,13 +1,17 @@
-{% assign cur_url_without_prefix_and_extension = page.url %}
+{% assign cur_url = page.url %}
 {% assign url_length = page.url | size | minus: 4 %}
 {% assign url_prefix = page.url | slice: 0,4 %}
 {% if url_prefix == "/en/" %}
-  {% assign cur_url_without_prefix_and_extension = cur_url_without_prefix_and_extension | slice: 4, url_length %}
+  {% assign cur_url = cur_url | slice: 4, url_length %}
 {% endif %}
-{% assign url_parts = cur_url_without_prefix_and_extension | split:'.' %}
+{% assign url_parts = cur_url | split:'.' %}
 {% assign num_url_parts = url_parts | size %}
 {% if num_url_parts >= 2 and url_parts[1] == "html" %}
-  {% assign cur_url_without_prefix_and_extension = url_parts[0] %}
+  {% assign cur_url = url_parts[0] %}
+{% endif %}
+{% assign is_english = false %}
+{% if url_prefix == "/en/" %}
+  {% assign is_english = true %}
 {% endif %}
 
 <div class="container-fluid  nav-container">
@@ -30,23 +34,34 @@
           
           <!-- First row -->
           <ul class="navbar-nav flex-column flex-lg-row mb-1">
+            {% if cur_url == "" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/en/">Home</a>
+              <a class="nav-link {{active}}" aria-current="page" href="/en/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/en/about">About me</a>
+              {% if cur_url == "about" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
+              <a class="nav-link {{active}}" href="/en/about">About me</a>
             </li>
             <li class="nav-item dropdown dropdown-menu-end">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {% assign instruments = "consulting,psychotherapy,psychodrama,trainings,communication,organisations" %}
+              {% assign instruments_arr = instruments | split: "," %}
+              {% if instruments_arr contains cur_url %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
+              <a class="nav-link dropdown-toggle {{active}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Instruments for being well
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/en/consulting">Psychological Consulting</a></li>
-                <li><a class="dropdown-item" href="/en/psychotherapy">Psychotherapy</a></li>
-                <li><a class="dropdown-item" href="/en/psychodrama">Psychodrama workshops</a></li>
-                <li><a class="dropdown-item" href="/en/trainings">Working in a team trainings</a></li>
-                <li><a class="dropdown-item" href="/en/communication">Cross-cultural differences and intercultural communication trainings and consulting</a></li>
-                <li><a class="dropdown-item" href="/en/organisations">Teams and organisations consulting</a></li>
+                {% if cur_url == "consulting" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
+                <li><a class="dropdown-item {{active}}" href="/en/consulting">Psychological Consulting</a></li>
+                {% if cur_url == "psychotherapy" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
+                <li><a class="dropdown-item {{active}}" href="/en/psychotherapy">Psychotherapy</a></li>
+                {% if cur_url == "psychodrama" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
+                <li><a class="dropdown-item {{active}}" href="/en/psychodrama">Psychodrama workshops</a></li>
+                {% if cur_url == "trainings" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
+                <li><a class="dropdown-item {{active}}" href="/en/trainings">Working in a team trainings</a></li>
+                {% if cur_url == "communication" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
+                <li><a class="dropdown-item {{active}}" href="/en/communication">Cross-cultural differences and intercultural communication trainings and consulting</a></li>
+                {% if cur_url == "organisations" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
+                <li><a class="dropdown-item {{active}}" href="/en/organisations">Teams and organisations consulting</a></li>
               </ul>
             </li>
           </ul>
@@ -54,14 +69,16 @@
           <!-- Second row -->
           <ul class="navbar-nav flex-column flex-lg-row">
             <li class="nav-item">
-              <a class="nav-link" href="/en/wisdom">Wisdom treasury</a>
+              {% if cur_url == "wisdom" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
+              <a class="nav-link {{active}}" href="/en/wisdom">Wisdom treasury</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/en/contact">Contact me</a>
+              {% if cur_url == "contact" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
+              <a class="nav-link {{active}}" href="/en/contact">Contact me</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/{{ cur_url_without_prefix_and_extension }}">БГ</a>
+              <a class="nav-link" href="/{{ cur_url }}">БГ</a>
             </li>
 
           </ul>
