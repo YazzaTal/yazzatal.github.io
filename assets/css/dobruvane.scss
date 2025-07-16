@@ -51,9 +51,8 @@ html, body {
 }
 
 @media (max-width: 550px) {
-    /* Force dropdown to align right under the parent */
   .navbar .dropdown-menu {
-    max-width: 90vw; /* prevent dropdown from overflowing viewport */
+    max-width: 80vw; /* prevent dropdown from overflowing viewport */
   }
 }
 
