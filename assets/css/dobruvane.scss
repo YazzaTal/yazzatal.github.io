@@ -3,6 +3,7 @@
 
 $color_graphite_dark_grey: #39393F; /* Graphite dark grey */;
 $color_dar_olive_green: #556B2F; /* Dark Olive Green */
+$color_creamy: rgb(255, 252, 244); /* creamy navbar background */
 
 @font-face { 
     font-family: "YesevaOne";
@@ -43,18 +44,41 @@ html, body {
 .navbar .dropdown-menu {
   right: 0;
   left: auto;
-  max-width: 90vw; /* prevent dropdown from overflowing viewport */
+  /*max-width: 90vw; /* prevent dropdown from overflowing viewport */
+  width: 500px;
   white-space: normal; /* allow wrapping of long text */
   word-break: break-word; /* break long words if needed */
 }
+
+@media (max-width: 550px) {
+    /* Force dropdown to align right under the parent */
+  .navbar .dropdown-menu {
+    max-width: 90vw; /* prevent dropdown from overflowing viewport */
+  }
+}
+
+.dropdown-item {
+  white-space: normal;       /* Wrap long text */
+  word-break: break-word;    /* Break long words */
+  overflow-wrap: break-word; /* Prevent overflow */
+}
+
+.dropdown-item:hover {
+  background-color: #CFE2AE;
+}
+
 
 .dropdown-item.active, .dropdown-item:active {
   background-color: $color_dar_olive_green !important;
 }
 
+.navbar {
+  background-color: $color_creamy !important;
+}
+
 .nav-container {
     min-height: 80px;
-    background-color: rgb(255, 252, 244);
+    background-color: $color_creamy;
     position: sticky;
     top: 0;
 }

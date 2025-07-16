@@ -42,7 +42,9 @@ RUN npm install -g netlify-cms-proxy-server
 RUN ruby --version
 CMD echo "------ IP ADDRESS -----" && \
     ip -4 -o addr show eth0 | awk '{print $4}' && \
+    echo "BROWSE LOCALLY:" && \
+    echo "http://127.0.0.1:4000/" && \
     echo "------ IP ADDRESS -----" && \
     echo && echo &&  \
     npx netlify-cms-proxy-server &  \
-    bundle exec jekyll serve --host=0.0.0.0
+    bundle exec jekyll serve --host=0.0.0.0  --baseurl ""
