@@ -95,6 +95,15 @@ html, body {
     margin-left: 10px;
 }
 
+.navbar-brand .logo-title svg {
+  width: 200px;
+}
+
+#dobruvame-logo-svg {
+  fill: var(--bs-navbar-active-color);;
+  stroke: var(--bs-navbar-active-color);
+}
+
 /* hamburger */
 .navbar-toggler:focus,
 .navbar-toggler:active,
