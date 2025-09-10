@@ -5,7 +5,7 @@
 # docker build -f ./Dockerfile -t dobruvane_site .
 
 # Just run Jekyll automatically (+ npx backend)
-# docker rm -f dobruvane; docker run --name dobruvane -v $PWD:/site -p 4000:4000 -it dobruvane_site
+# docker rm -f dobruvane; docker run --rm --name dobruvane -v $PWD:/site -p 4000:4000 -it dobruvane_site
 
 # Interactive connect
 # docker rm -f dobruvane; docker run --name dobruvane -v $PWD:/site -p 4000:4000 -it dobruvane_site /bin/bash
