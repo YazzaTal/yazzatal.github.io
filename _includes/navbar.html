@@ -23,7 +23,7 @@
         <div class="d-flex flex-row align-items-center">
             <img class="logo" src="{{ site.baseurl }}/assets/images/dobruvane-logo.png">
             <div class="logo-title">
-              {% include logo/text-logo-bg.svg %}
+              {% include logo/text-logo-bg.html %}
             </div>
         </div>
       </a>
@@ -57,13 +57,13 @@
                 {% if cur_url == "/psychotherapy" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
                 <li><a class="dropdown-item {{ active }}" href="/psychotherapy">Психотерапия</a></li>
                 {% if cur_url == "/psychodrama" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
-                <li><a class="dropdown-item {{ active }}" href="/psychodrama">Психодрама работилници</a></li>
+                <!--<li><a class="dropdown-item {{ active }}" href="/psychodrama">Психодрама работилници</a></li>-->
                 {% if cur_url == "/trainings" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
                 <li><a class="dropdown-item {{ active }}" href="/trainings">Обучения за екипност и работа в екип</a></li>
                 {% if cur_url == "/communication" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
                 <li><a class="dropdown-item {{ active }}" href="/communication">Обучения и консултиране в крос-културни различия и междукултурна комуникация</a></li>
                 {% if cur_url == "/organisations" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
-                <li><a class="dropdown-item {{ active }}" href="/organisations">Консултиране на екипи и организации</a></li>
+                <!--<li><a class="dropdown-item {{ active }}" href="/organisations">Консултиране на екипи и организации</a></li>-->
               </ul>
             </li>
           </ul>

@@ -21,8 +21,35 @@ $color_creamy: rgb(255, 252, 244); /* creamy navbar background */
         url('{{ site.baseurl }}/assets/fonts/Montserrat/static/Montserrat-Medium.ttf') format("truetype")
 }
 
+@font-face { 
+    font-family: "Zeferino";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+        url('{{ site.baseurl }}/assets/logo/Alexandra_Zeferino_One.ttf') format("truetype")
+}
+
+@font-face { 
+    font-family: "UniNeue";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+        url('{{ site.baseurl }}/assets/logo/UniNeue-Light.otf') format("opentype")
+}
+
+
+@font-face { 
+    font-family: "UniNeue-bold";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+        url('{{ site.baseurl }}/assets/logo/UniNeueBold.ttf') format("opentype")
+}
+
+
+
 .intro-pic {
-    font-family: "YesevaOne", Sans-serif;
+    font-family: "UniNeue", Sans-serif;
     font-size: 32px;
     font-weight: 400;
     line-height: 37px;
@@ -32,7 +59,7 @@ $color_creamy: rgb(255, 252, 244); /* creamy navbar background */
 
 html, body {
     height: 100%;
-    font-family:  "Montserrat", Sans-serif;
+    font-family:  "UniNeue", Sans-serif;
     color: $color_graphite_dark_grey; /* Graphite dark grey */
 }
 
@@ -66,18 +93,21 @@ html, body {
   background-color: #CFE2AE;
 }
 
+.footer {
+  background-color: $color_dar_olive_green !important;
+}
 
 .dropdown-item.active, .dropdown-item:active {
   background-color: $color_dar_olive_green !important;
 }
 
 .navbar {
-  background-color: $color_creamy !important;
+  background-color: white !important;
 }
 
 .nav-container {
     min-height: 80px;
-    background-color: $color_creamy;
+    background-color: white;
     position: sticky;
     top: 0;
 }
@@ -88,15 +118,37 @@ html, body {
 }
 
 .navbar-brand .logo {
-    width: 50px;
+    width: 80px;
 }
 
 .navbar-brand .logo-title {
-    margin-left: 10px;
+    margin-left: 25px;
 }
 
 .navbar-brand .logo-title svg {
   width: 200px;
+}
+
+.logo-wrapper {
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+}
+
+.logo-dobruvane-bg {
+  font-family: "Zeferino";
+  font-size: 62px;
+  font-weight: 500;
+}
+
+.logo-with-jasmina-tal-bg {
+    font-family: "UniNeue";
+    font-size: 21px;
+    position: relative;
+    top: 26px;
+    left: -58px;
+    font-weight: 500;
 }
 
 #dobruvame-logo-svg {
@@ -115,6 +167,12 @@ html, body {
 .navbar-toggler{
     padding: 0px;
     border: 0px;
+}
+
+.nav-link, .dropdown-item {
+  font-weight: 700;
+  font-size: 18px;
+  padding-bottom: 5px;
 }
 
 .nav-link.active {

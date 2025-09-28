@@ -23,7 +23,7 @@
         <div class="d-flex flex-row align-items-center">
             <img class="logo" src="{{ site.baseurl }}/assets/images/dobruvane-logo.png">
             <div class="logo-title">
-              {% include logo/text-logo-en.svg %}
+              {% include logo/text-logo-en.html %}
             </div>
         </div>
       </a>
@@ -57,13 +57,13 @@
                 {% if cur_url == "psychotherapy" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}
                 <li><a class="dropdown-item {{active}}" href="/en/psychotherapy">Psychotherapy</a></li>
                 {% if cur_url == "psychodrama" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
-                <li><a class="dropdown-item {{active}}" href="/en/psychodrama">Psychodrama workshops</a></li>
+                <!--<li><a class="dropdown-item {{active}}" href="/en/psychodrama">Psychodrama workshops</a></li>-->
                 {% if cur_url == "trainings" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
                 <li><a class="dropdown-item {{active}}" href="/en/trainings">Working in a team trainings</a></li>
                 {% if cur_url == "communication" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
                 <li><a class="dropdown-item {{active}}" href="/en/communication">Cross-cultural differences and intercultural communication trainings and consulting</a></li>
                 {% if cur_url == "organisations" %}{% assign active = "active" %}{% else %}{% assign active = "" %}{% endif %}                
-                <li><a class="dropdown-item {{active}}" href="/en/organisations">Teams and organisations consulting</a></li>
+                <!--<li><a class="dropdown-item {{active}}" href="/en/organisations">Teams and organisations consulting</a></li>-->
               </ul>
             </li>
           </ul>
