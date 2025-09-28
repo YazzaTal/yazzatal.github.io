@@ -125,30 +125,57 @@ html, body {
     margin-left: 25px;
 }
 
+@media all and (max-width:475px) {
+  .nav-container, .nav-container .container {
+    padding: 0;
+  }
+  .navbar-brand .logo-title {
+      margin-left: 10px;
+      margin-right: 0px;
+  }
+}
+
 .navbar-brand .logo-title svg {
   width: 200px;
 }
 
 .logo-wrapper {
-      display: flex;
-    flex-direction: row;
-    align-items: center;
     color: black;
+    position: relative;
 }
 
-.logo-dobruvane-bg {
+.logo-dobruvane {
   font-family: "Zeferino";
   font-size: 62px;
   font-weight: 500;
 }
 
-.logo-with-jasmina-tal-bg {
+
+.logo-dobruvane-bg {
+  padding-right: 67px;
+}
+
+.logo-dobruvane-en {
+  padding-right: 49px;
+}
+
+.logo-with-jasmina-tal {
     font-family: "UniNeue";
     font-size: 21px;
-    position: relative;
-    top: 26px;
-    left: -58px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     font-weight: 500;
+}
+
+.logo-with-jasmina-tal-bg {
+    left: 111px;
+    top: 57px;
+}
+
+.logo-with-jasmina-tal-en {
+    top: 57px;
+    left: 73px;
 }
 
 #dobruvame-logo-svg {
